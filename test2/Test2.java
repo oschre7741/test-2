@@ -7,11 +7,16 @@
  */
 public class Test2
 {
-    public static boolean afterOdd(int n) {
-        for (int i=0; i<=n; i++) {
-            if ((i + 1) % 2 == 0 && i % 2 != 0 && (1 + 2) % 2 != 2) {
-                return false;
+    public static boolean oddRight(int n) {
+        boolean flag = false;
+        while (n != 0) {
+            if ((n % 10) % 2 == 0) {
+                flag = true;
             }
+            else if ((n % 10) % 2 != 0 && flag) {
+                return false;
+            } 
+            n = n/10;
         }
         return true;
     }
@@ -19,26 +24,27 @@ public class Test2
     public static double gpa(String grades) {
         double grade = 0;
         for (int i=0; i<grades.length(); i++) {
-            if (grades.charAt(i) == 'A') {
+            String letter = grades.substring(i, i+1);
+            if (letter.equals("A")) {
                 grade += 4.0;
             }
-            else if (grades.charAt(i) == 'B') {
+            else if (letter.equals("B")) {
                 grade += 3.0;
             }
-            else if (grades.charAt(i) == 'C') {
+            else if (letter.equals("C")) {
                 grade += 2.0;
             }
-            else if (grades.charAt(i) == 'D'){
+            else if (letter.equals("D")){
                 grade += 1.0;
             }
         }
-        return grade / 7.0;
+        return grade / grades.length();
     }
     
     public static void main(String args[]) {
-        System.out.println(gpa("BBABAAF"));
+        System.out.println(oddRight(2461357));
+        System.out.println(oddRight(24981357));
         
-        System.out.println(afterOdd(135246));
-        System.out.println(afterOdd(132546));
+        System.out.println(gpa("BBABAAF"));
     }
 }
