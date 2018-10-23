@@ -2,7 +2,7 @@
 comment0.target=Test2
 comment0.text=\r\n\ Test\ 2\ corrections\r\n\r\n\ @author\ Olivia\ Schreiner\r\n\ @version\ 10-23-2018\r\n
 comment1.params=n
-comment1.target=boolean\ afterOdd(int)
+comment1.target=boolean\ oddRight(int)
 comment2.params=grades
 comment2.target=double\ gpa(java.lang.String)
 comment3.params=args
