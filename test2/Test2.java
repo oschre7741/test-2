@@ -7,6 +7,15 @@
  */
 public class Test2
 {
+    public static boolean afterOdd(int n) {
+        for (int i=0; i<=n; i++) {
+            if ((i + 1) % 2 == 0 && i % 2 != 0 && (1 + 2) % 2 != 2) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
     public static double gpa(String grades) {
         double grade = 0;
         for (int i=0; i<grades.length(); i++) {
@@ -19,7 +28,7 @@ public class Test2
             else if (grades.charAt(i) == 'C') {
                 grade += 2.0;
             }
-            else {
+            else if (grades.charAt(i) == 'D'){
                 grade += 1.0;
             }
         }
@@ -27,6 +36,9 @@ public class Test2
     }
     
     public static void main(String args[]) {
-        System.out.println(gpa("BBABAAA"));
+        System.out.println(gpa("BBABAAF"));
+        
+        System.out.println(afterOdd(135246));
+        System.out.println(afterOdd(132546));
     }
 }
